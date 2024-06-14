@@ -1,5 +1,46 @@
 console.log("Would you like to play rock paper scissors?")
 
+let humanScore = 0
+let computerScore = 0
+
+function playRound(humanChoice, computerChoice) {
+    let roundWinner;
+
+    // Determine the round winner based on choices
+    if ((humanChoice === 'rock' && computerChoice === 'scissors') ||
+        (humanChoice === 'paper' && computerChoice === 'rock') ||
+        (humanChoice === 'scissors' && computerChoice === 'paper')) {
+        roundWinner = 'human';
+    
+    } else if ((computerChoice === 'rock' && humanChoice === 'scissors') ||
+               (computerChoice === 'paper' && humanChoice === 'rock') ||
+               (computerChoice === 'scissors' && humanChoice === 'paper')) {
+        roundWinner = 'computer';
+        
+    } else {
+        roundWinner = 'tie';
+    }
+
+     // Log the result of the round
+     if (roundWinner === 'human') {
+        console.log("You win! " + humanChoice + " beats " + computerChoice);
+        // Increment humanScore
+        humanScore++;
+    } else if (roundWinner === 'computer') {
+        console.log("You lose! " + computerChoice + " beats " + humanChoice);
+        // Increment computerScore
+        computerScore++;
+    } else {
+        console.log("It's a tie! Both chose " + humanChoice);
+    }
+
+    //display scores
+    console.log("Scores:");
+    console.log("You: " + humanScore);
+    console.log("Computer: " + computerScore);
+    
+
+  }
 function getComputerChoice() {
     let choice = Math.random();
     if (choice >= 0 && choice <= (1/3)) {
@@ -32,11 +73,24 @@ function getHumanChoice() {
     return userInput;
 }
 
-// Example usage:
-const humanChoice = getHumanChoice();
-console.log("Human choice:", humanChoice);
 
-console.log("Computer choice:" , getComputerChoice());
 
-let humanScore = 0
-let computerScore = 0
+function playGame(){
+
+    let humanSelection = getHumanChoice();
+
+    console.log("Human choice:", humanSelection);
+
+    console.log("Computer choice:" , getComputerChoice());
+
+    
+
+    let computerSelection = getComputerChoice();
+
+
+    for (let i = 0; i < 5; i++) {
+    playRound(humanSelection, computerSelection);
+    }
+}
+playGame();
+

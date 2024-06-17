@@ -42,6 +42,8 @@ function playRound(humanChoice, computerChoice) {
 
   }
 function getComputerChoice() {
+
+    //TODO - Update DOM with computer selection
     let choice = Math.random();
     if (choice >= 0 && choice <= (1/3)) {
         return "rock";
@@ -74,23 +76,22 @@ function getHumanChoice() {
 }
 
 
-
+/*
 function playGame(){
-
-    let humanSelection = getHumanChoice();
-
-    console.log("Human choice:", humanSelection);
-
-    console.log("Computer choice:" , getComputerChoice());
-
-    
-
-    let computerSelection = getComputerChoice();
 
 
     for (let i = 0; i < 5; i++) {
+
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+
+    console.log("Human choice:", humanSelection);
+
+    console.log("Computer choice:" , computerSelection);
     playRound(humanSelection, computerSelection);
     }
 }
 playGame();
+
+*/
 

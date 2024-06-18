@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let ties = 0;
 
 function checkWins(humanScore, computerScore) {
     return Math.max(humanScore, computerScore);
@@ -19,6 +20,7 @@ function playRound(humanChoice, computerChoice) {
         roundWinner = 'computer';
     } else {
         roundWinner = 'tie';
+        ties++;
     }
 
     // Log the result of the round
@@ -38,9 +40,15 @@ function playRound(humanChoice, computerChoice) {
     console.log("Scores:");
     console.log("You: " + humanScore);
     console.log("Computer: " + computerScore);
+    console.log("ties: " + ties)
 
     // Update scores in the HTML
     tallyWins(humanScore, computerScore);
+
+    // Check if someone has won the game
+    if (humanScore >= 5) {
+        winGame();
+    }
 }
 
 function tallyWins(humanScore, computerScore) {
@@ -48,6 +56,7 @@ function tallyWins(humanScore, computerScore) {
     const cScore = computerScore;
     document.querySelector('.playerScore').textContent = `Score: ${hScore}`;
     document.querySelector('.computerScore').textContent = `Score: ${cScore}`;
+    document.querySelector('.ties').textContent = `Ties: ${ties}`;
 }
 
 function getComputerChoice() {
@@ -62,8 +71,23 @@ function getComputerChoice() {
         return "error";
     }
 }
-
+function winGame(){
+    if(humanScore >=5){
+        alert("you win, you scored 5 points! :3");
+    }
+    if(computerScore >=5){
+        alert("you lose, computer scored 5 points. :( ")
+    }
+    document.querySelector('.playerScore').textContent = `Score: 0`;
+    document.querySelector('.computerScore').textContent = `Score: 0`;
+    document.querySelector('.ties').textContent = `Ties: 0`;
+    humanScore = 0;
+    computerScore = 0;
+    ties = 0;
+    
+}
 function playGame() {
+    
     let imgs = document.querySelectorAll('img');
     imgs.forEach((img) => {
         img.addEventListener('click', () => {

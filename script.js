@@ -1,36 +1,28 @@
-console.log("Would you like to play rock paper scissors?")
+let humanScore = 0;
+let computerScore = 0;
 
-let humanScore = 0
-let computerScore = 0
-
-function checkWins(humanScore,computerScore){
+function checkWins(humanScore, computerScore) {
     return Math.max(humanScore, computerScore);
-
 }
 
 function playRound(humanChoice, computerChoice) {
     let roundWinner;
-    let wins = checkWins(humanScore, computerScore);
-    if(wins >= 5){
-        return;
-    }
+
     // Determine the round winner based on choices
     if ((humanChoice === 'rock' && computerChoice === 'scissors') ||
         (humanChoice === 'paper' && computerChoice === 'rock') ||
         (humanChoice === 'scissors' && computerChoice === 'paper')) {
         roundWinner = 'human';
-    
     } else if ((computerChoice === 'rock' && humanChoice === 'scissors') ||
                (computerChoice === 'paper' && humanChoice === 'rock') ||
                (computerChoice === 'scissors' && humanChoice === 'paper')) {
         roundWinner = 'computer';
-        
     } else {
         roundWinner = 'tie';
     }
 
-     // Log the result of the round
-     if (roundWinner === 'human') {
+    // Log the result of the round
+    if (roundWinner === 'human') {
         console.log("You win! " + humanChoice + " beats " + computerChoice);
         // Increment humanScore
         humanScore++;
@@ -42,25 +34,23 @@ function playRound(humanChoice, computerChoice) {
         console.log("It's a tie! Both chose " + humanChoice);
     }
 
-    //display scores
+    // Display scores in the console
     console.log("Scores:");
     console.log("You: " + humanScore);
     console.log("Computer: " + computerScore);
-    
-    tallyWins(humanScore, computerScore);
-  }
 
-  function tallyWins(humanScore, computerScore){
+    // Update scores in the HTML
+    tallyWins(humanScore, computerScore);
+}
+
+function tallyWins(humanScore, computerScore) {
     const hScore = humanScore;
     const cScore = computerScore;
     document.querySelector('.playerScore').textContent = `Score: ${hScore}`;
     document.querySelector('.computerScore').textContent = `Score: ${cScore}`;
-
-  }
+}
 
 function getComputerChoice() {
-
-    //TODO - Update DOM with computer selection
     let choice = Math.random();
     if (choice >= 0 && choice <= (1/3)) {
         return "rock";
@@ -69,48 +59,20 @@ function getComputerChoice() {
     } else if (choice > (2/3) && choice <= 1) {
         return "scissors";
     } else {
-        return "error"
+        return "error";
     }
-    
 }
 
-function getHumanChoice() {
-    let userInput;
-    //TODO get user input via buttons
-
-    
-
-    return userInput;
-}
-
-
-
-function playGame(){
-
-    //play the game until someone wins 5 times
+function playGame() {
     let imgs = document.querySelectorAll('img');
-        imgs.forEach((img) =>
-            img.addEventListener(('click'),() => {
-                if(img.id){
-                    playRound(img.id);
-                }
-            })
-        );
-    
-
-    let humanSelection = getHumanChoice();
-    let computerSelection = getComputerChoice();
-
-    console.log("Human choice:", humanSelection);
-
-    console.log("Computer choice:" , computerSelection);
-    playRound(humanSelection, computerSelection);
-    
+    imgs.forEach((img) => {
+        img.addEventListener('click', () => {
+            let humanSelection = img.id; // Assuming img.id is set to 'rock', 'paper', or 'scissors'
+            let computerSelection = getComputerChoice();
+            playRound(humanSelection, computerSelection);
+        });
+    });
 }
 
-
-function resetGame(){
-    //reset game
-}
-
+// Initialize the game
 playGame();

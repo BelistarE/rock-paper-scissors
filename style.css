@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
 .tallyScore{
     display:flex;
     padding: 20px;
@@ -9,6 +12,7 @@
 .playerScore, .computerScore, .computerTitle, .playerTitle{
     padding: 10px;
     padding-bottom: 0px;
+    font-family: "Saira", sans-serif;;
 }
 
 .playerScore, .computerScore{
@@ -20,10 +24,15 @@
     padding: 20px;
     padding-bottom: 0px;
     justify-content:center;
+    padding-top: 0px;
 
 }
 
 .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     background: #6a90a3;
     border-radius: 10px;
     max-width: 300px;
@@ -41,11 +50,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: cornflowerblue;
+    background-color: #F24976;
     border-radius: 10px;
     padding: 10px;
+    margin-bottom: 0;
+    max-width: 100px;
+    font-family: "Saira", sans-serif;
 }
 
 .pImg{
     transition: width 0.3s ease; /* Smooth transition on width change */
+}
+
+.title{
+    font-family: "Saira", sans-serif;
+    font-size: 60px;
+    color: white; /* Text color */
+    -webkit-text-stroke: 2px #1d2631;
+}
+
+.mb{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+body{
+    background-color: #2F4159;
+}
+
+.reset{
+    background-color: #6a90a3;
+    font-family: "Saira", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-top: 0px;
+    
 }

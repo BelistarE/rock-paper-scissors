@@ -5,39 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="styleSheet" href="style.css" />
-    <link rel="icon" href="./Images/favicon.png" type="image/png>
+    <link rel="icon" href="./Images/favicon.png" type="image/png">
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <div class="mb">
+        <h1 class="title">Rock Paper Scissors</h1>
 
-    <div class="winnerDiv">
-        <h1 class="winner"></h1>
-        <button class="reset" onclick="resetGame()">Reset</button>
-    </div>
-        <div class="score">
-            <h3 class="ties">Ties: 0</h3>
-            <div class="box">
-                <div class="tallyTitle">
-                    <h3 class="playerTitle">Player</h3>
-                    <h3 class="computerTitle">Computer</h3>
-                </div>
-                <div class="tallyScore">
-                    <h3 class="playerScore">Score: 0</h3>
-                    <h3 class="computerScore">Score: 0</h3>
-                </div>
-            </div>
-
+        <div class="winnerDiv">
+            <h1 class="winner"></h1>
+            <button class="reset" onclick="resetGame()">Reset</button>
         </div>
-        
+            <div class="score">
+                <div class="box">
+                    <h3 class="ties">Ties: 0</h3>
+                    <div class="tallyTitle">
+                        <h3 class="playerTitle">Player</h3>
+                        <h3 class="computerTitle">Computer</h3>
+                    </div>
+                    <div class="tallyScore">
+                        <h3 class="playerScore">Score: 0</h3>
+                        <h3 class="computerScore">Score: 0</h3>
+                    </div>
+                </div>
 
-        <div class="playerSection">
-            <h3 class="playerChoice"></h3>
+            </div>
             
-            <div class="playerImage">
-                <img src="./Images/rock.png" alt="rock" class="pImg" id="rock">
-                <img src="./Images/paper.png" alt="paper" class="pImg" id="paper">
-                <img src="./Images/scissors.png" alt="scissors" class="pImg" id="scissors">
+
+            <div class="playerSection">
+                <h3 class="playerChoice"></h3>
+                
+                <div class="playerImage">
+                    <img src="./Images/rock.png" alt="rock" class="pImg" id="rock">
+                    <img src="./Images/paper.png" alt="paper" class="pImg" id="paper">
+                    <img src="./Images/scissors.png" alt="scissors" class="pImg" id="scissors">
+                </div>
             </div>
-        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

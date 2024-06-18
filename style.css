@@ -16,7 +16,9 @@
 }
 
 .playerScore, .computerScore{
-    justify-content: center;
+    display: flex;
+    align-self: flex-start;
+
 }
 
 .tallyTitle{
@@ -28,6 +30,7 @@
 
 }
 
+
 .box{
     display: flex;
     flex-direction: column;
@@ -37,13 +40,28 @@
     border-radius: 10px;
     max-width: 300px;
     margin: 20px;
+    padding: 10px;
+            border-radius: 5px;
 }
 
 .score{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 300px;
+     justify-content: center; /* Center items horizontally */
+     align-items: center; /* Center items vertically */
+     width: 1000px;
+     text-align: center;
+}
+
+.leftChoice, .rightChoice{
+    flex: 1;
+}
+
+
+
+
+h2{
+    font-family: "Saira", sans-serif;
+    color:#F24976;
 }
 
 .ties{
@@ -95,4 +113,12 @@ body{
     transition: letter-spacing 0.5s ease;
     transition: width 0.3s ease;
     
+}
+
+.reset:hover{
+    cursor: pointer;
+}
+
+.pImg:hover{
+    cursor: pointer;
 }

@@ -73,7 +73,7 @@ function playRound(humanChoice, computerChoice) {
     console.log("You: " + humanScore);
     console.log("Computer: " + computerScore);
     console.log("ties: " + ties)
-
+    displayChoices(humanChoice, computerChoice);
     // Update scores in the HTML
     tallyWins(humanScore, computerScore);
 
@@ -85,6 +85,11 @@ function playRound(humanChoice, computerChoice) {
     if (computerScore >=5) {
         winGame();
     }
+}
+
+function displayChoices(humanChoice, computerChoice) {
+    document.querySelector('.humanDisplay').textContent = `You choose: ${humanChoice}`;
+    document.querySelector('.computerDisplay').textContent = `Computer chooses: ${computerChoice}`;
 }
 
 function tallyWins(humanScore, computerScore) {

@@ -20,6 +20,19 @@ images.forEach(image => {
     });
 });
 
+//hover on reset
+const resetButton = document.querySelector('.reset');
+
+    resetButton.addEventListener('mouseover', function() {
+        this.style.width = '90px';
+        this.style.letterSpacing = '3px';
+    });
+
+    resetButton.addEventListener('mouseout', function(){
+        this.style.width = '70px';
+        this.style.letterSpacing = '.5px';
+    });
+
 
 function checkWins(humanScore, computerScore) {
     return Math.max(humanScore, computerScore);

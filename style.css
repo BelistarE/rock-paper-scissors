@@ -1,0 +1,27 @@
+.tallyScore{
+    display:flex;
+    padding: 20px;
+    padding-top: 0px;
+}
+
+.playerScore, .computerScore, .computerTitle, .playerTitle{
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.playerScore, .computerScore{
+    justify-content: center;
+}
+
+.tallyTitle{
+    display: flex;
+    padding: 20px;
+    padding-bottom: 0px;
+
+}
+
+.box{
+    background: #6a90a3;
+
+    max-width: 300px;
+}

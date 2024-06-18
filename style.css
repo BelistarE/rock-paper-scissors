@@ -45,3 +45,7 @@
     border-radius: 10px;
     padding: 10px;
 }
+
+.pImg{
+    transition: width 0.3s ease; /* Smooth transition on width change */
+}

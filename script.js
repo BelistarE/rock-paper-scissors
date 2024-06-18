@@ -1,6 +1,25 @@
 let humanScore = 0;
 let computerScore = 0;
 let ties = 0;
+//hover
+// Select all elements with class .pImg
+const images = document.querySelectorAll('.pImg');
+
+// Loop through each image and add event listeners
+images.forEach(image => {
+    // Add event listener for mouseover (hover)
+    image.addEventListener('mouseover', function() {
+        // Enlarge the image on hover
+        this.style.width = '180px'; // Adjust width to desired size
+    });
+
+    // Add event listener for mouseout (hover out)
+    image.addEventListener('mouseout', function() {
+        // Shrink the image back to its original size on mouse leave
+        this.style.width = '160px'; // Return to initial width
+    });
+});
+
 
 function checkWins(humanScore, computerScore) {
     return Math.max(humanScore, computerScore);

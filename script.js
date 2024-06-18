@@ -49,6 +49,10 @@ function playRound(humanChoice, computerChoice) {
     if (humanScore >= 5) {
         winGame();
     }
+
+    if (computerScore >=5) {
+        winGame();
+    }
 }
 
 function tallyWins(humanScore, computerScore) {
@@ -98,5 +102,14 @@ function playGame() {
     });
 }
 
+function resetGame(){
+    document.querySelector('.playerScore').textContent = `Score: 0`;
+    document.querySelector('.computerScore').textContent = `Score: 0`;
+    document.querySelector('.ties').textContent = `Ties: 0`;
+    humanScore = 0;
+    computerScore = 0;
+    ties = 0;
+
+}
 // Initialize the game
 playGame();

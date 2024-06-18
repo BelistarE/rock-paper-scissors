@@ -2,6 +2,8 @@
     display:flex;
     padding: 20px;
     padding-top: 0px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .playerScore, .computerScore, .computerTitle, .playerTitle{
@@ -17,11 +19,13 @@
     display: flex;
     padding: 20px;
     padding-bottom: 0px;
+    justify-content:center;
 
 }
 
 .box{
     background: #6a90a3;
-
+    border-radius: 10px;
     max-width: 300px;
+    margin: 20px;
 }

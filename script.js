@@ -3,9 +3,17 @@ console.log("Would you like to play rock paper scissors?")
 let humanScore = 0
 let computerScore = 0
 
+function checkWins(humanScore,computerScore){
+    return Math.max(humanScore, computerScore);
+
+}
+
 function playRound(humanChoice, computerChoice) {
     let roundWinner;
-
+    let wins = checkWins(humanScore, computerScore);
+    if(wins >= 5){
+        return;
+    }
     // Determine the round winner based on choices
     if ((humanChoice === 'rock' && computerChoice === 'scissors') ||
         (humanChoice === 'paper' && computerChoice === 'rock') ||
@@ -39,8 +47,17 @@ function playRound(humanChoice, computerChoice) {
     console.log("You: " + humanScore);
     console.log("Computer: " + computerScore);
     
+    tallyWins(humanScore, computerScore);
+  }
+
+  function tallyWins(humanScore, computerScore){
+    const hScore = humanScore;
+    const cScore = computerScore;
+    document.querySelector('.playerScore').textContent = `Score: ${hScore}`;
+    document.querySelector('.computerScore').textContent = `Score: ${cScore}`;
 
   }
+
 function getComputerChoice() {
 
     //TODO - Update DOM with computer selection
@@ -59,28 +76,27 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let userInput;
-    const validChoices = ['rock', 'paper', 'scissors'];
+    //TODO get user input via buttons
 
-    do {
-        // Prompt the user to input their choice
-        userInput = prompt("Enter your choice: rock, paper, or scissors").toLowerCase();
-
-        // Check if the user's input is valid
-        if (!validChoices.includes(userInput)) {
-            // If the input is not valid, display an alert message
-            alert("Invalid choice! Please enter 'rock', 'paper', or 'scissors'.");
-        }
-    } while (!validChoices.includes(userInput)); // Continue the loop until valid input is provided
+    
 
     return userInput;
 }
 
 
-/*
+
 function playGame(){
 
-
-    for (let i = 0; i < 5; i++) {
+    //play the game until someone wins 5 times
+    let imgs = document.querySelectorAll('img');
+        imgs.forEach((img) =>
+            img.addEventListener(('click'),() => {
+                if(img.id){
+                    playRound(img.id);
+                }
+            })
+        );
+    
 
     let humanSelection = getHumanChoice();
     let computerSelection = getComputerChoice();
@@ -89,9 +105,12 @@ function playGame(){
 
     console.log("Computer choice:" , computerSelection);
     playRound(humanSelection, computerSelection);
-    }
+    
 }
+
+
+function resetGame(){
+    //reset game
+}
+
 playGame();
-
-*/
-
